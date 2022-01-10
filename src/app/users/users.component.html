@@ -1,0 +1,38 @@
+<br><br>
+<div class="d-flex justify-content-center">
+    <h2>List of users</h2>
+</div>
+
+<mat-nav-list>
+    <div *ngFor="let user of userData?.users; index as i">
+        <mat-list-item (click)="toggle[user.id] = !toggle[user.id]">
+            <a matLine>User {{user.firstName}}.{{user.lastName}}</a>
+            <span>
+                <mat-icon *ngIf="!toggle[user.id]">expand_more</mat-icon>
+                <mat-icon *ngIf="toggle[user.id]">expand_less</mat-icon>
+            </span>
+        </mat-list-item>
+
+        <div [hidden]="!toggle[user.id]">
+            <div class="d-flex justify-content-center">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.birthday}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</mat-nav-list>

@@ -1,0 +1,59 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "jambon",
+      "price": "2€",
+      "type": "food",
+      "details": "succulent"
+    },
+    {
+      "id": 2,
+      "name": "PC Gamer",
+      "price": "1000€",
+      "type": "electronics",
+      "details": "16GO Ram + NVIDIA 4500GTXWS"
+    }
+  ],
+
+  "orders": [
+    {
+      "id": 1,
+      "adress": "Firminy",
+      "content": "Jambon, Doliprane",
+      "date": "24/01/2022",
+      "comment": "Au 3eme etage"
+    },
+    {
+      "id": 2,
+      "adress": "Saint-Etienne",
+      "content": "Burger, Bonnet",
+      "date": "02/02/2022",
+      "comment": "A mettre dans la boite au lettres"
+    },
+    {
+      "id": 3,
+      "adress": "Firminy",
+      "content": "Jambon, Doliprane",
+      "date": "24/01/2022",
+      "comment": "Au 3eme etage"
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Thog",
+      "lastName": "GGY",
+      "birthday": "30/02/2000",
+      "email": "thog@gy.gg"
+    },
+    {
+      "id": 2,
+      "firstName": "Greg",
+      "lastName": "Bir",
+      "birthday": "31/02/2000",
+      "email": "greg@bir.gg"
+    }
+  ]
+}

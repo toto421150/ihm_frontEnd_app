@@ -1,0 +1,79 @@
+<div class="padding">
+    <div class="d-flex justify-content-center">
+        <div class="col-xl-9 col-md-12">
+            <div class="card user-card-full">
+                <div class="card-block text-center text-white">
+                    <img src="../../assets/mail.png" class="img-radius" alt="User-Profile-Image">
+                </div>
+            </div>
+            <form>
+                <div class="card-block">
+                    <h2 class="b-b-default f-w-600">Informations</h2>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p class="m-b-10 f-w-600">Full Name</p>
+                            <input type="text" class="form-control" placeholder="Name" name="inputName"
+                                [(ngModel)]="inputName" required>
+                            <small class="form-text text-muted">Enter your full name</small>
+                        </div>
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-5">
+                            <p class="m-b-10 f-w-600">Email</p>
+                            <input type="email" class="form-control" placeholder="E-mail" name="inputMail"
+                                [(ngModel)]="inputMail" required>
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <p class="m-b-10 f-w-600">Theme</p>
+                            <select class="form-select" [(ngModel)]="inputTheme" name="0">
+                                <option [value]="0" disabled selected>Select your theme</option>
+                                <option *ngFor="let theme of themes" required>
+                                    {{theme}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                        </div>
+                        <div class="col-sm-5">
+                            <p class="m-b-10 f-w-600">Subject</p>
+                            <input type="text" class="form-control" placeholder="Subject" name="inputSubject"
+                                [(ngModel)]="inputSubject" required>
+                        </div>
+                    </div>
+                    <br>
+                    <h2 class="b-b-default f-w-600">Message</h2>
+                    <div class="col-sm-12">
+                        <textarea class="form-control" rows="8" placeholder="Enter your message here."
+                            name="inputMessage" [(ngModel)]="inputMessage" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success" (click)="popupSubmit = true">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+<div class="overlay" *ngIf="popupSubmit" onLoad="this.focus()">
+    <div class="popup">
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Contact us</h4>
+            <p class="mb-0">Your message has been submitted</p>
+            <hr>
+            <p>{{inputName}} ({{inputMail}})</p>
+            <p>Theme:{{inputTheme}}, Subject:{{inputSubject}}</p>
+            <p>{{inputMessage}}</p>
+            <br>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-danger" (click)="submitted()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.img-radius {
+  width: 40%;
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: #54c4a2;
+}
+
+.b-b-default {
+  border-bottom: 1px solid #39d6a7;
+  font-weight: 500;
+}

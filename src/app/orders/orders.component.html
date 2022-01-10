@@ -1,0 +1,40 @@
+<br><br>
+<div class="d-flex justify-content-center">
+    <h2>List of orders</h2>
+</div>
+
+<mat-nav-list>
+    <div *ngFor="let order of orderData?.orders; index as i">
+        <mat-list-item (click)="toggle[order.id] = !toggle[order.id]">
+            <a matLine>Order n°{{order.id}}</a>
+            <span>
+                <mat-icon *ngIf="!toggle[order.id]">expand_more</mat-icon>
+                <mat-icon *ngIf="toggle[order.id]">expand_less</mat-icon>
+            </span>
+        </mat-list-item>
+
+        <div [hidden]="!toggle[order.id]">
+            <div class="d-flex justify-content-center">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Adress</th>
+                            <th scope="col">Content</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{order.adress}}</td>
+                            <td>{{order.content}}</td>
+                            <td>{{order.date}}</td>
+                            <td>{{order.comment}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</mat-nav-list>

@@ -1,0 +1,40 @@
+<br><br>
+<div class="d-flex justify-content-center">
+    <h2>List of products</h2>
+</div>
+
+<mat-nav-list>
+    <div *ngFor="let product of productData?.products; index as i">
+        <mat-list-item>
+            <a matLine (click)="toggle[product.id] = !toggle[product.id]">Product "{{product.name}}"</a>
+            <span>
+                <mat-icon *ngIf="!toggle[product.id]">expand_more</mat-icon>
+                <mat-icon *ngIf="toggle[product.id]">expand_less</mat-icon>
+            </span>
+        </mat-list-item>
+
+        <div [hidden]="!toggle[product.id]">
+            <div class="d-flex justify-content-center">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.price}}</td>
+                            <td>{{product.type}}</td>
+                            <td>{{product.details}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</mat-nav-list>
