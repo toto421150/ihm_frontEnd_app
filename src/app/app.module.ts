@@ -15,6 +15,7 @@ import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ContactComponent } from './contact/contact.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     UsersComponent,
     OrdersComponent,
     ContactComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     MatListModule,
     MatIconModule,
     FormsModule,
+    HttpClientModule,
+
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
   ],
