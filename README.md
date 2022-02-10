@@ -1,3 +1,16 @@
+# Projet IHM Front-End
+## Sujet
+
+Réaliser un front-end en angular en simulant un back-end via un fichier json local
+
+## Developers
+
+- GAGNAIRE Thomas thomas.gagnaire@telecom-st-etienne.fr
+- FELICIANO Ruben ruben.feliciano@telecom-st-etienne.fr
+
+## Preview de l'application
+![alt text](https://github.com/toto421150/ihm_frontEnd_app/blob/master/src/assets/Preview.png?raw=true)
+
 # IhmProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
