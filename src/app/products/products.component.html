@@ -4,7 +4,7 @@
 </div>
 
 <mat-nav-list>
-    <div *ngFor="let product of productData?.products; index as i">
+    <div *ngFor="let product of productsList; index as i">
         <mat-list-item>
             <a matLine (click)="toggle[product.id] = !toggle[product.id]">Product "{{product.name}}"</a>
             <span>

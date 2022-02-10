@@ -4,7 +4,7 @@
 </div>
 
 <mat-nav-list>
-    <div *ngFor="let order of orderData?.orders; index as i">
+    <div *ngFor="let order of ordersList; index as i">
         <mat-list-item (click)="toggle[order.id] = !toggle[order.id]">
             <a matLine>Order n°{{order.id}}</a>
             <span>

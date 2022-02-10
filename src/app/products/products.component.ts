@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import products from '../../assets/data.json';
+// import products from '../../assets/allData.json';
 
 @Component({
   selector: 'app-products',
@@ -8,21 +8,21 @@ import products from '../../assets/data.json';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  constructor(/*private service:ApiService*/) { }
+  constructor(private service:ApiService) { 
+  }
   ngOnInit(): void {
-    // this.getEventsfromapi()
+    this.getEventsfromapi()
    }
   toggle:any = [];
-  productData= products;
-  //productsList:any=[]
-
-  // getEventsfromapi(){
-  //   this.service.getData().subscribe(data=> {// GET: list des projets
-  //     for (let i = 0; i < data.length; i++) {
-  //       console.log(data);
-  //       this.productsList.push(data[i]);
-  //     }
-  //   })
-    //console.log(this.productsList);
-  // }
+  productsList:any=[]
+  // productData= products;
+  
+  getEventsfromapi(){
+    this.service.getProducts().subscribe(data=> {
+      for (let i = 0; i < data.length; i++) {
+        // console.log(data[i])
+        this.productsList.push(data[i]);
+      }
+    })
+  }
 }

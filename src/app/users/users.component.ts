@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import users from '../../assets/data.json';
+import { ApiService } from '../api.service';
+// import users from '../../assets/allData.json';
 
 @Component({
   selector: 'app-users',
@@ -8,8 +8,21 @@ import users from '../../assets/data.json';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  constructor() { }
-  ngOnInit(): void { }
+  constructor(private service:ApiService) { 
+  }
+  ngOnInit(): void {
+    this.getEventsfromapi()
+   }
   toggle:any = [];
-  userData= users;
+  usersList:any=[]
+  // userData= users;
+
+  getEventsfromapi(){
+    this.service.getUsers().subscribe(data=> {
+      for (let i = 0; i < data.length; i++) {
+        // console.log(data[i])
+        this.usersList.push(data[i]);
+      }
+    })
+  }
 }

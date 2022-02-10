@@ -4,7 +4,7 @@
 </div>
 
 <mat-nav-list>
-    <div *ngFor="let user of userData?.users; index as i">
+    <div *ngFor="let user of usersList; index as i">
         <mat-list-item (click)="toggle[user.id] = !toggle[user.id]">
             <a matLine>User {{user.firstName}}.{{user.lastName}}</a>
             <span>

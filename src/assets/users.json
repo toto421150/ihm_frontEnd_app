@@ -1,0 +1,16 @@
+ [
+    {
+      "id": 1,
+      "firstName": "Thog",
+      "lastName": "GGY",
+      "birthday": "30/02/2000",
+      "email": "thog@gy.gg"
+    },
+    {
+      "id": 2,
+      "firstName": "Greg",
+      "lastName": "Bir",
+      "birthday": "31/02/2000",
+      "email": "greg@bir.gg"
+    }
+  ]

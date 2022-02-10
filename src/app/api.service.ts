@@ -1,18 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
- const LINK_API = 'http://localhost:4200/data';
-//const LINK_API = 'https://api.npoint.io/adabae85e08b61870d92';
+ const LINK_ORDER = 'assets/orders.json';
+ const LINK_PRODUCT = 'assets/products.json';
+ const LINK_USER = 'assets/users.json';
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  constructor(private http: HttpClient) {
+  }
+    ngOnInit() {
+  }
 
-  constructor(private http:HttpClient) { }
-
-  public getData(){
-    return this.http.get<products[]>(LINK_API)
-  };
+  public getProducts() {
+    return this.http.get<products[]>(LINK_PRODUCT);
+  }
+  public getOrders() {
+    return this.http.get<orders[]>(LINK_ORDER);
+  }
+  public getUsers() {
+    return this.http.get<users[]>(LINK_USER);
+  }
 }
 
 interface products{
